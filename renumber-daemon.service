@@ -1,0 +1,15 @@
+[Unit]
+Description=Hyprland per-monitor workspace renumber daemon
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/env python3 /home/linmax/.config/hypr/scripts/renumber-daemon.py
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+WorkingDirectory=/home/linmax
+
+[Install]
+WantedBy=default.target
